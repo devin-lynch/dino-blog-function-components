@@ -1,3 +1,5 @@
+import Comment from "./Comment";
+
 function Post(props) {
     console.log(props)
     return(
@@ -9,7 +11,7 @@ function Post(props) {
             <p>{props.body}</p>
 
            {props.comments.map((comment, i) => {
-            return <p key={i}>{comment}</p>
+            return <Comment key={`comment-${i}`} commentText={comment} />
            })}
         </div>
     )
